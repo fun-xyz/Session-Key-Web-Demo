@@ -100,7 +100,7 @@ export default function App() {
     setLoadings({ ...loadings, swap: false }) // 🎉 Done swapping!
   }
 
-  // 🚀 Let's transfer some ETH! 💸
+  // 🚀 Let's create a session key! 💸
   const createSessionKey = async () => {
     // 1 hour from now
     const deadline = Date.now() + 60 * 60 * 1000
@@ -127,7 +127,7 @@ export default function App() {
     setLoadings({ ...loadings, transfer: false }) // 🎉 Done transferring!
   }
 
-  // 🌱 Time to stake some ETH! 🌳
+  // 💰 Time to transfer some USDC! ➡
   const transferUsdcWithSessionKey = async () => {
     if (!sessionKey) {
       throw new Error("Session Key was not created!")
