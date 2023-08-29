@@ -79,6 +79,10 @@ export default function App() {
 
   // Initialize our FunWallet 
   const initializeSingleAuthFunAccount = async () => {
+    if (!connectorAccount) {
+      console.log("Please connect your wallet first!")
+      return;
+    }
     initializeFunAccount({
       users: [{ userId: convertToValidUserId(connectorAccount) }],
       index: 214
@@ -87,6 +91,10 @@ export default function App() {
 
   // Swap ETH for USDC
   const swapEth = async () => {
+    if (!connectorAccount) {
+      console.log("Please connect your wallet first!")
+      return;
+    }
     const op = await funWallet.swap(auth, await auth.getUserId(), { tokenIn: "eth", tokenOut: "usdc", inAmount: 0.001 })
     setLoadings({ ...loadings, swap: true })
     const receipt = await funWallet.executeOperation(auth, op)
@@ -123,6 +131,10 @@ export default function App() {
 
   // Transfer some USDC
   const transferUsdcWithSessionKey = async () => {
+    if (!connectorAccount) {
+      console.log("Please connect your wallet first!")
+      return;
+    }
     if (!sessionKey) {
       throw new Error("Session Key was not created!")
     }
@@ -135,6 +147,10 @@ export default function App() {
 
   // Prefund your FunWallet
   const prefundFunWallet = async () => {
+    if (!connectorAccount) {
+      console.log("Please connect your wallet first!")
+      return;
+    }
     setLoadings({ ...loadings, prefund: true })
     const { txHash } = await fetch(`https://api.fun.xyz/demo-faucet/get-faucet?token=eth&testnet=goerli&addr=${await funWallet.getAddress()}`).then(res => res.json())
     const client = await Chain.getClient()
