@@ -60,9 +60,6 @@ export default function App() {
   const [balance, setBalance] = useState({})
   const [sessionKey, setSessionKey] = useState(null)
 
-
-
-
   // Automatically fetch balances when things change
   useEffect(() => {
     const getBalance = async () => {
@@ -91,10 +88,10 @@ export default function App() {
   // Swap ETH for USDC
   const swapEth = async () => {
     const op = await funWallet.swap(auth, await auth.getUserId(), { tokenIn: "eth", tokenOut: "usdc", inAmount: 0.001 })
-    setLoadings({ ...loadings, swap: true }) // 🕒 Loading time!
+    setLoadings({ ...loadings, swap: true })
     const receipt = await funWallet.executeOperation(auth, op)
     setTxIds({ ...txIds, swap: receipt.txId })
-    setLoadings({ ...loadings, swap: false }) // 🎉 Done swapping!
+    setLoadings({ ...loadings, swap: false })
   }
 
   // Create a session key
@@ -117,11 +114,11 @@ export default function App() {
       user: sessionKeyAuth,
     }
     const op = await funWallet.createSessionKey(auth, await auth.getUserId(), sessionKeyParams)
-    setLoadings({ ...loadings, transfer: true }) // 🕒 Loading time!
+    setLoadings({ ...loadings, transfer: true })
     const receipt = await funWallet.executeOperation(auth, op)
     setSessionKey(sessionKeyAuth)
     setTxIds({ ...txIds, transfer: receipt.txId })
-    setLoadings({ ...loadings, transfer: false }) // 🎉 Done transferring!
+    setLoadings({ ...loadings, transfer: false })
   }
 
   // Transfer some USDC
@@ -130,27 +127,26 @@ export default function App() {
       throw new Error("Session Key was not created!")
     }
     const op = await funWallet.transfer(sessionKey, await sessionKey.getUserId(), { amount: 10, to: await auth.getAddress(), token: "usdc" })
-    setLoadings({ ...loadings, transferUsdcWithSessionKey: true }) // Loading time
+    setLoadings({ ...loadings, transferUsdcWithSessionKey: true })
     const receipt = await funWallet.executeOperation(auth, op)
     setTxIds({ ...txIds, transferUsdcWithSessionKey: receipt.txId })
-    setLoadings({ ...loadings, transferUsdcWithSessionKey: false }) // Done staking
+    setLoadings({ ...loadings, transferUsdcWithSessionKey: false })
   }
 
   // Prefund your FunWallet
   const prefundFunWallet = async () => {
-    setLoadings({ ...loadings, prefund: true }) // Loading time!
+    setLoadings({ ...loadings, prefund: true })
     const { txHash } = await fetch(`https://api.fun.xyz/demo-faucet/get-faucet?token=eth&testnet=goerli&addr=${await funWallet.getAddress()}`).then(res => res.json())
     const client = await Chain.getClient()
     await client.waitForTransactionReceipt({ hash: txHash })
     setTxIds({ ...txIds, prefund: txHash })
-    setLoadings({ ...loadings, prefund: false }) // Done prefunding!
+    setLoadings({ ...loadings, prefund: false })
   }
 
   return (
     <div className="App">
       <h1>Create and Use a Session Key with a FunWallet</h1>
-      1. Connect Metamask.
-      <ConnectorButton key={0} index={0} ></ConnectorButton>
+      1. &ensp;<ConnectorButton key={0} index={0} ></ConnectorButton>
       {
         active ?
           <div>
@@ -161,8 +157,7 @@ export default function App() {
       <br></br>
       <br></br>
 
-      2. Initialize the FunWallet and Auth object.
-      <button onClick={initializeSingleAuthFunAccount}>Initialize FunWallet</button>
+      2. &ensp;<button onClick={initializeSingleAuthFunAccount}> Initialize the FunWallet and Auth object.</button>
       {account ?
         <div>
           Success! FunWallet Address: {account}
@@ -172,8 +167,7 @@ export default function App() {
       <br></br>
       <br></br>
 
-      3. Add test ETH to the FunWallet.
-      <button onClick={prefundFunWallet} >Add Funds</button>
+      3. &ensp;<button onClick={prefundFunWallet} >Add test ETH to the FunWallet.</button>
       {loadings.prefund ?
         <div>
           Loading...
@@ -191,7 +185,7 @@ export default function App() {
       {funWallet && <>Wallet balance: {tokens.map(token => (<div key={token}>&emsp;{balance[token] ?? 0} {token} < br /></div>))}   <br></br>
         <br></br></>}
 
-      4. Swap 0.001 ETH to USDC with a FunWallet.<button onClick={swapEth} >Swap</button>
+      4 .&ensp;<button onClick={swapEth} >Swap 0.001 ETH to USDC with a FunWallet.</button>
       {loadings.swap &&
         <div>
           Loading...
@@ -206,7 +200,7 @@ export default function App() {
       <br></br>
       <br></br>
 
-      5. Create Session Key.<button onClick={createSessionKey}>Create</button>
+      5. &ensp;<button onClick={createSessionKey}>Create Session Key.</button>
       {loadings.transfer ?
         <div>
           Loading...
@@ -222,7 +216,7 @@ export default function App() {
       <br></br>
       <br></br>
 
-      6. Transfer 10 USDC with a FunWallet and Session Key.<button onClick={transferUsdcWithSessionKey} >Transfer </button>
+      6. &ensp;<button onClick={transferUsdcWithSessionKey} >Transfer 10 USDC with a FunWallet and Session Key. </button>
       {loadings.transferUsdcWithSessionKey ?
         <div>
           Loading...
