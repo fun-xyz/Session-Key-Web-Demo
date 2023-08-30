@@ -80,7 +80,7 @@ export default function App() {
   // Initialize our FunWallet 
   const initializeSingleAuthFunAccount = async () => {
     if (!connectorAccount) {
-      console.log("Please connect your wallet first!")
+      alert("Please connect your wallet first!")
       return;
     }
     initializeFunAccount({
@@ -92,7 +92,7 @@ export default function App() {
   // Swap ETH for USDC
   const swapEth = async () => {
     if (!funWallet) {
-      console.log("Please connect your wallet first!")
+      alert("Please connect your wallet first!")
       return;
     }
     const op = await funWallet.swap(auth, await auth.getUserId(), { tokenIn: "eth", tokenOut: "usdc", inAmount: 0.001 })
@@ -105,7 +105,7 @@ export default function App() {
   // Create a session key
   const createSessionKey = async () => {
     if (!funWallet) {
-      console.log("Please connect your wallet first!")
+      alert("Please connect your wallet first!")
       return;
     }
     // 1 hour from now
@@ -136,11 +136,11 @@ export default function App() {
   // Transfer some USDC
   const transferUsdcWithSessionKey = async () => {
     if (!funWallet) {
-      console.log("Please connect your wallet first!")
+      alert("Please connect your wallet first!")
       return;
     }
     if (!sessionKey) {
-      throw new Error("Session Key was not created!")
+      alert("Session Key was not created!")
     }
     const op = await funWallet.transfer(sessionKey, await sessionKey.getUserId(), { amount: 10, to: await auth.getAddress(), token: "usdc" })
     setLoadings({ ...loadings, transferUsdcWithSessionKey: true })
@@ -152,7 +152,7 @@ export default function App() {
   // Prefund your FunWallet
   const prefundFunWallet = async () => {
     if (!funWallet) {
-      console.log("Please connect your wallet first!")
+      alert("Please connect your wallet first!")
       return;
     }
     setLoadings({ ...loadings, prefund: true })
