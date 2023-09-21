@@ -2084,70 +2084,31 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@fun-xyz/core@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@fun-xyz/core/-/core-0.4.8.tgz#5c3ccfd97ab530e7711675b017c41cae48dd32e0"
-  integrity sha512-FvHJ3VZXKQ0W9BWwpitbhw/gXQqZGIAW0RdA/bFXPVbWqO0M9oebelI0LyPUvQLFbcFSI4dSlieylPFgOFq9yQ==
+"@funkit/core@^0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@funkit/core/-/core-0.8.5.tgz#8ba68b7a9eaaff22b91cf901cb0eff2cd85ae660"
+  integrity sha512-JoFwYCF3p5c5hyvSBRYNFfdVOco4UiPk0NjuhiVy5FQbOsKMsNGOZZdl6TKhMOikDj/AQjw1D7TaSDN2dIzYBg==
   dependencies:
     "@aws-sdk/client-secrets-manager" "^3.315.0"
     "@ethersproject/contracts" "^5.7.0"
     "@lifeomic/attempt" "^3.0.3"
     "@uniswap/sdk" "^3.0.3"
-    "@uniswap/v3-core" "^1.0.1"
-    "@uniswap/v3-sdk" "^3.9.0"
+    "@uniswap/v3-core" "1.0.1"
+    "@uniswap/v3-sdk" "3.9.0"
+    "@uniswap/v3-staker" "1.0.2"
     dotenv "^16.0.3"
     ethers "5.7.2"
     node-fetch "^2.6.11"
     uuid "^9.0.0"
     viem "^0.3.50"
 
-"@fun-xyz/react@^0.1.5":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@fun-xyz/react/-/react-0.1.11.tgz#51a6c5011c9463e5f86efb0cf7fda04a2d9bc839"
-  integrity sha512-yqRr7DRs4B5UgLHpBarFP6sWSc1Duqgu3NVLnbv434Pg1UJ7F802rc5X7C9U8E4El6wTG2HAsXiJimzFM3yzQQ==
+"@funkit/react@^0.8.5":
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/@funkit/react/-/react-0.8.5.tgz#7466ec05fcc12dabd52ecec015e4514ed4d032f0"
+  integrity sha512-WyDdoQUF1Fr76yhEYiZLotUxKkULSU31Zup+hIxlaxC5adzl1dnbyUN2XsgIRQlxYcDCslLOxe49wtC+k6bEEg==
   dependencies:
     "@coinbase/wallet-sdk" "^3.6.6"
-    "@fun-xyz/core" "^0.4.8"
-    "@magic-ext/oauth" "11.0.0"
-    "@magic-sdk/commons" "^14.2.1"
-    "@magic-sdk/provider" "^18.2.1"
-    "@walletconnect/modal" "^2.4.5"
-    "@web3-react/coinbase-wallet" "^8.2.0"
-    "@web3-react/core" "^8.2.0"
-    "@web3-react/eip1193" "^8.2.0"
-    "@web3-react/metamask" "^8.2.1"
-    "@web3-react/types" "^8.2.0"
-    "@web3-react/walletconnect-v2" "^8.3.2"
-    magic-sdk "18.2.1"
-    react "^18.2.0"
-    viem "^1.7.0"
-    web3-core "^4.0.1"
-    zustand "^4.3.8"
-
-"@funkit/core@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@funkit/core/-/core-0.8.0.tgz#28788e3eedbaebbcc95f87e1f64ec224253bdeb8"
-  integrity sha512-n4h3mHCCekxb948UrqpAatYhuj4HV7g1gal1gOXqi5rmkmOtKuwIoIzEORMCHNSU99+jqrzjUCXegHBEehAj7Q==
-  dependencies:
-    "@aws-sdk/client-secrets-manager" "^3.315.0"
-    "@ethersproject/contracts" "^5.7.0"
-    "@lifeomic/attempt" "^3.0.3"
-    "@uniswap/sdk" "^3.0.3"
-    "@uniswap/v3-core" "^1.0.1"
-    "@uniswap/v3-sdk" "^3.9.0"
-    dotenv "^16.0.3"
-    ethers "5.7.2"
-    node-fetch "^2.6.11"
-    uuid "^9.0.0"
-    viem "^0.3.50"
-
-"@funkit/react@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@funkit/react/-/react-0.8.0.tgz#b53d746bccd6c7db669269a806b9491f3a1d2515"
-  integrity sha512-+y78jmNfR5Dibgd0J/CvCua9cwelQNp/Yo4iZv7KseAgzR/aC03sq996QWH7O0Wws2Af+x6uCQQGbxGhi4FgtA==
-  dependencies:
-    "@coinbase/wallet-sdk" "^3.6.6"
-    "@funkit/core" "^0.8.0"
+    "@funkit/core" "^0.8.5"
     "@magic-ext/oauth" "11.0.0"
     "@magic-sdk/commons" "^14.2.1"
     "@magic-sdk/provider" "^18.2.1"
@@ -3963,10 +3924,10 @@
   resolved "https://registry.yarnpkg.com/@uniswap/lib/-/lib-4.0.1-alpha.tgz#2881008e55f075344675b3bca93f020b028fbd02"
   integrity sha512-f6UIliwBbRsgVLxIaBANF6w09tYqc6Y/qXdsrbEmXHyFA7ILiKrIwRFXe1yOg8M3cksgVsO9N7yuL2DdCGQKBA==
 
-"@uniswap/sdk-core@^4":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@uniswap/sdk-core/-/sdk-core-4.0.6.tgz#7b6d562f54293bbe0a9d101fb84e619db325f7b6"
-  integrity sha512-6GzCVfnOiJtvo91zlF/VjnC2OEbBRThVclzrh7+Zmo8dBovXwSlXwqn3RkSWACn/XEOzAKH70TficfOWm6mWJA==
+"@uniswap/sdk-core@^3.0.1":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@uniswap/sdk-core/-/sdk-core-3.2.6.tgz#1a652516fab0c6bc1420c2226648da967a10f52a"
+  integrity sha512-MvH/3G0W0sM2g7XjaUy9qU7IabxL/KQp/ucU0AQGpVxiTaAhmVRtsjkkv9UDyzpIXVrmevl4kRgV7KKE29UuXA==
   dependencies:
     "@ethersproject/address" "^5.0.2"
     big.js "^5.2.2"
@@ -4010,7 +3971,7 @@
   resolved "https://registry.yarnpkg.com/@uniswap/v3-core/-/v3-core-1.0.0.tgz#6c24adacc4c25dceee0ba3ca142b35adbd7e359d"
   integrity sha512-kSC4djMGKMHj7sLMYVnn61k9nu+lHjMIxgg9CDQT+s2QYLoA56GbSK9Oxr+qJXzzygbkrmuY6cwgP6cW2JXPFA==
 
-"@uniswap/v3-core@^1.0.1":
+"@uniswap/v3-core@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@uniswap/v3-core/-/v3-core-1.0.1.tgz#b6d2bdc6ba3c3fbd610bdc502395d86cd35264a0"
   integrity sha512-7pVk4hEm00j9tc71Y9+ssYpO6ytkeI0y7WE9P6UcmNzhxPePwyAxImuhVsTqWK9YFvzgtvzJHi64pBl4jUzKMQ==
@@ -4038,14 +3999,14 @@
     "@uniswap/v3-core" "1.0.0"
     base64-sol "1.0.1"
 
-"@uniswap/v3-sdk@^3.9.0":
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/@uniswap/v3-sdk/-/v3-sdk-3.10.0.tgz#962c9e598250ced00702d944783c2d9ee3fa12f6"
-  integrity sha512-sbmSA1O+Ct960r66Ie/c1rOmVadpwRu8nQ79pGICv0pZJdnFIQ/SReG3F+iC2C2UNNjNP6aC2WDUggXrjyrgnA==
+"@uniswap/v3-sdk@3.9.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@uniswap/v3-sdk/-/v3-sdk-3.9.0.tgz#de93fa19f89c29d460996aa4d0b4bb6531641105"
+  integrity sha512-LuoF3UcY1DxSAQKJ3E4/1Eq4HaNp+x+7q9mvbpiu+/PBj+O1DjLforAMrKxu+RsA0aarmZtz7yBnAPy+akgfgQ==
   dependencies:
     "@ethersproject/abi" "^5.0.12"
     "@ethersproject/solidity" "^5.0.9"
-    "@uniswap/sdk-core" "^4"
+    "@uniswap/sdk-core" "^3.0.1"
     "@uniswap/swap-router-contracts" "^1.2.1"
     "@uniswap/v3-periphery" "^1.1.1"
     "@uniswap/v3-staker" "1.0.0"
@@ -4056,6 +4017,15 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@uniswap/v3-staker/-/v3-staker-1.0.0.tgz#9a6915ec980852479dfc903f50baf822ff8fa66e"
   integrity sha512-JV0Qc46Px5alvg6YWd+UIaGH9lDuYG/Js7ngxPit1SPaIP30AlVer1UYB7BRYeUVVxE+byUyIeN5jeQ7LLDjIw==
+  dependencies:
+    "@openzeppelin/contracts" "3.4.1-solc-0.7-2"
+    "@uniswap/v3-core" "1.0.0"
+    "@uniswap/v3-periphery" "^1.0.1"
+
+"@uniswap/v3-staker@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@uniswap/v3-staker/-/v3-staker-1.0.2.tgz#febad4905903032bb114ab58138c2d5200c87a3c"
+  integrity sha512-+swIh/yhY9GQGyQxT4Gz54aXYLK+uc3qsmIvaAX+FjvhcL9TGOvS9tXbQsCZM4AJW63vj6TLsmHIjGMIePL1BQ==
   dependencies:
     "@openzeppelin/contracts" "3.4.1-solc-0.7-2"
     "@uniswap/v3-core" "1.0.0"
